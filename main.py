@@ -127,7 +127,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     happy_year = int(config["happy_since"].split("-")[0])
     happy_month = int(config["happy_since"].split("-")[1])
     happy_day = int(config["happy_since"].split("-")[2])
-    happy_date = date(happy_year, happy_month, happy_day)
+    happy_since = date(happy_year, happy_month, happy_day)
     # 获取在一起的日期差
     happy_days = str(today.__sub__(happy_since)).split(" ")[0]
     # 获取所有生日数据
