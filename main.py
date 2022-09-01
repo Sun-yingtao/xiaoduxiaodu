@@ -124,12 +124,12 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     today = datetime.date(datetime(year=year, month=month, day=day))
     week = week_list[today.isoweekday() % 7]
     # 获取在一起的日子的日期格式
-    love_year = int(config["love_date"].split("-")[0])
-    love_month = int(config["love_date"].split("-")[1])
-    love_day = int(config["love_date"].split("-")[2])
-    love_date = date(love_year, love_month, love_day)
+    happy_year = int(config["happy_since"].split("-")[0])
+    happy_month = int(config["happy_since"].split("-")[1])
+    happy_day = int(config["happy_since"].split("-")[2])
+    happy_date = date(happy_year, happy_month, happy_day)
     # 获取在一起的日期差
-    love_days = str(today.__sub__(love_date)).split(" ")[0]
+    happy_days = str(today.__sub__(happy_since)).split(" ")[0]
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
@@ -161,8 +161,8 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "value": wind_dir,
                 "color": get_color()
             },
-            "love_day": {
-                "value": love_days,
+            "happy_day": {
+                "value": happy_days,
                 "color": get_color()
             },
             "note_en": {
